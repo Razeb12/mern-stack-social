@@ -9,12 +9,51 @@ export default makeStyles((theme) => ({
         flexDirection: 'row',
         justifyContent: 'space-between',
         backgroundColor: '#00684A',
-        padding: '0 80px'
+        padding: '0 80px',
+        [theme.breakpoints.down('md')]: {
+          // flexDirection: 'column',
+          padding: '0 30px',
+        
+        },
+        [theme.breakpoints.down('xs')]: {
+          // flexDirection: 'column',
+          padding: '0 2px',
+        
+        },
+  },
+  profile: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    width: '200px',
+    alignItems: 'center',
+    [theme.breakpoints.down('xs')]: {
+      width: 'auto',
+      marginTop: '5px',
+      justifyContent: 'flex-end',
+    },
+  },
+  logout: {
+    marginLeft: '20px',
+  },
+  userName: {
+    display: 'flex',
+    alignItems: 'center',
+    textAlign: 'center',
   },
   mainContainer: {
     marginTop: '150px',
    
    
+},
+iCon:{
+cursor: 'pointer',
+},
+
+
+image2:{
+  [theme.breakpoints.down('xs')]: {
+    display: 'none'
+  },
 },
   heading: {
     color: 'white',
@@ -22,22 +61,18 @@ export default makeStyles((theme) => ({
     textDecoration: 'none',
 },
   image: {
-    marginLeft: '15px',
+    marginLeft: '10px',
+    padding: "10px 0",
+    
+  
   },
   toolbar: {
     display: 'flex',
     justifyContent: 'flex-end',
  
   },
-  profile: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    width: '400px',
-  },
-  userName: {
-    display: 'flex',
-    alignItems: 'center',
-  },
+
+
   brandContainer: {
     display: 'flex',
     alignItems: 'center',
@@ -46,5 +81,8 @@ export default makeStyles((theme) => ({
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
+    [theme.breakpoints.down('xs')]: {
+      display: 'none'
+    },
   },
 }));

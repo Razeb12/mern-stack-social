@@ -3,8 +3,9 @@ import { AppBar, Typography, Toolbar, Avatar, Button, Container } from '@materia
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
-
-// import brandLogo from '../../images/brand-logo.png';
+import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
+import brandLogo from '../../images/earth-logo.png';
+import brandText from '../../images/logo-text.png';
 import * as actionType from '../../constants/actionTypes'; 
 import useStyles from './styles';
 
@@ -39,11 +40,31 @@ const Navbar = () => {
 
     return (
        <Container>
-            <AppBar className={classes.appBar} position="fixed" elevation={3}>
+           <AppBar className={classes.appBar} position="fixed" elevation={3}>
+      <Link to="/" className={classes.brandContainer}>
+        
+        <img className={classes.image} src={brandLogo} alt="icon" height="60px" />
+        <img className={classes.image2} component={Link} to="/" src={brandText} alt="icon" height="45px" />
+      </Link>
+      <Toolbar className={classes.toolbar}>
+        {user?.result ? (
+          <div className={classes.profile}>
+            <Avatar className={classes.purple} alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar>
+            <Typography className={classes.userName} variant="h6">{user?.result.name}</Typography>
+            {/* <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button> */}
+            <PowerSettingsNewIcon className={classes.iCon} onClick={logout}/>
+          </div>
+        ) : (
+          <Button component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
+        )}
+      </Toolbar>
+    </AppBar>
+            {/* <AppBar className={classes.appBar} position="fixed" elevation={3}>
             <div className={classes.brandContainer}>
                 <Toolbar>
-                    <Typography component={Link} to="/" className={classes.heading} variant="h2" align="left">CyberLife</Typography>
-                    {/* <img component={Link} to="/" className={classes.image} src={brandLogo} alt="icon" height="60" /> */}
+                   
+                    <img component={Link} to="/" className={classes.image} src={brandLogo} alt="icon" height="80" />
+                    <Typography component={Link} to="/" className={classes.heading} variant="h2" align="left">InfoNest</Typography>
                 </Toolbar>
             </div>
             <Toolbar className={classes.toolbar}>
@@ -57,7 +78,7 @@ const Navbar = () => {
                     <Button component={Link} to="/auth" variant="outlined" color="inherit" >Sign In</Button>
                 )}
             </Toolbar>
-        </AppBar>
+        </AppBar> */}
        </Container>
     );
 };
