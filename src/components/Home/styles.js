@@ -20,7 +20,7 @@ export default makeStyles((theme) => ({
     
   },
   searchButton:{
-    backgroundColor: '#00684A',
+  
     color: 'white'
   },
   pagination: {

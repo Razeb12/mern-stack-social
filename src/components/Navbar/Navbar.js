@@ -40,7 +40,7 @@ const Navbar = () => {
 
     return (
        <Container>
-           <AppBar className={classes.appBar} position="fixed" elevation={3}>
+           <AppBar className={classes.appBar} position="fixed"  elevation={3}>
       <Link to="/" className={classes.brandContainer}>
         
         <img className={classes.image} src={brandLogo} alt="icon" height="60px" />

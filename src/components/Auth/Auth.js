@@ -59,7 +59,7 @@ const SignUp = () => {
   return (
     <Container className={classes.mainContainer} component="main" maxWidth="xs">
       <Paper className={classes.paper} elevation={6}>
-        <Avatar className={classes.avatar}>
+        <Avatar className={classes.avatar} color='primary'>
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">{ isSignup ? 'Sign up' : 'Sign in' }</Typography>
@@ -75,13 +75,13 @@ const SignUp = () => {
             <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
             { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
           </Grid>
-          <Button type="submit" fullWidth variant="contained" className={classes.submit}>
+          <Button type="submit" fullWidth variant="contained" color='primary' className={classes.submit}>
             { isSignup ? 'Sign Up' : 'Sign In' }
           </Button>
           <GoogleLogin
             clientId="233195604112-u788d0p6dt7rk1tm84kq1sd414r5gokc.apps.googleusercontent.com"
             render={(renderProps) => (
-              <Button className={classes.googleButton}  fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon />} variant="contained">
+              <Button className={classes.googleButton} color='primary'  fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon />} variant="contained">
                 Google Sign In
               </Button>
             )}

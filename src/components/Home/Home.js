@@ -106,12 +106,12 @@ const Home = () => {
               <ChipInput
                 style={{ margin: '10px 0' }}
                 value={tags}
-                onAdd={(chip) => handleAddChip(chip)}
+                onAdd={(chip) => handleAddChip(chip)} 
                 onDelete={(chip) => handleDeleteChip(chip)}
                 label="Search Tags"
                 variant="outlined"
               />
-              <Button onClick={searchPost} className={classes.searchButton} variant="contained" >Search</Button>
+              <Button onClick={searchPost} color='primary' className={classes.searchButton} variant="contained" >Search</Button>
             </AppBar>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
             {(!searchQuery && !tags.length) && (

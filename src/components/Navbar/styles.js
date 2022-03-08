@@ -8,7 +8,7 @@ export default makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        backgroundColor: '#00684A',
+        // backgroundColor: '#111936',
         padding: '0 80px',
         [theme.breakpoints.down('md')]: {
           // flexDirection: 'column',
