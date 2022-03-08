@@ -5,11 +5,12 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Post from '../Posts/Post/Post';
 import { getPostsByCreator, getPostsBySearch } from '../../actions/posts';
-
+import useStyles from './style'
 const CreatorOrTag = () => {
   const { name } = useParams();
   const dispatch = useDispatch();
   const { posts, isLoading } = useSelector((state) => state.posts);
+  const classes = useStyles();
 
   const location = useLocation();
 
@@ -24,9 +25,9 @@ const CreatorOrTag = () => {
   if (!posts.length && !isLoading) return 'No posts';
 
   return (
-    <div>
-      <Typography variant="h2">{name}</Typography>
-      <Divider style={{ margin: '20px 0 50px 0' }} />
+    <div className={classes.mainContainer}>
+      <Typography className={classes.text} variant="h4">{location.pathname.startsWith('/tags') ? `Post with '${name}' tag` : `Post Created by ${name}`}</Typography>
+      <Divider style={{ margin: '20px 0 50px 0', backgroundColor:'white' }} className={classes.text} />
       {isLoading ? <CircularProgress /> : (
         <Grid container alignItems="stretch" spacing={3}>
           {posts?.map((post) => (

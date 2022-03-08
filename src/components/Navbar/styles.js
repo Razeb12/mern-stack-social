@@ -8,7 +8,7 @@ export default makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        // backgroundColor: '#111936',
+        backgroundColor: '#111936',
         padding: '0 80px',
         [theme.breakpoints.down('md')]: {
           // flexDirection: 'column',
@@ -24,16 +24,16 @@ export default makeStyles((theme) => ({
   profile: {
     display: 'flex',
     justifyContent: 'space-between',
-    width: '200px',
+    width: '300px',
     alignItems: 'center',
     [theme.breakpoints.down('xs')]: {
-      width: 'auto',
+      width: '400',
       marginTop: '5px',
       justifyContent: 'flex-end',
     },
   },
   logout: {
-    marginLeft: '20px',
+    marginLeft: '10px',
   },
   userName: {
     display: 'flex',
