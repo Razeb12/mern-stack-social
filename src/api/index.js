@@ -3,7 +3,7 @@ import axios from 'axios';
 // const url = 'http://localhost:5000/posts';
 
 // const url ="https://cyberlife-project.herokuapp.com/posts";
-const API = axios.create({ baseURL: 'https://cyberlife-project.herokuapp.com' });
+const API = axios.create({ baseURL: 'https://cyberlife-network.herokuapp.com' });
 
 
 API.interceptors.request.use((req) => {
